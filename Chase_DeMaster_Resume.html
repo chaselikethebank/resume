@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Chase DeMaster</title>
+  <style>
+html {
+color: #cccccc;
+background-color: #111111;
+}
+body {
+margin: 0 auto;
+max-width: 72em;
+padding: 60px 80px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+line-height: 1.7;
+font-size: 15px;
+}
+h1, h2, h3 { color: #e8e8e8; }
+h1 { border-bottom: 1px solid #333333; padding-bottom: 10px; }
+h2 { border-bottom: 1px solid #282828; padding-bottom: 8px; margin-top: 2.5em; }
+h3 { color: #bbbbbb; margin-top: 2.5em; }
+a { color: #6688bb; text-decoration: underline; }
+a:hover { color: #88aadd; }
+hr { border: none; border-top: 1px solid #282828; margin: 2em 0; }
+strong { color: #e0e0e0; }
+table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+th { background-color: #1a1a1a; color: #e0e0e0; text-align: left; padding: 10px 14px; border: 1px solid #2a2a2a; }
+td { padding: 10px 14px; border: 1px solid #222222; color: #b0b0b0; }
+tr:nth-child(even) { background-color: #161616; }
+ul { padding-left: 1.5em; }
+li { margin-bottom: 0.6em; color: #b0b0b0; }
+em { color: #999999; }
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+color: #111111;
+}
+body {
+background-color: transparent;
+color: #111111;
+font-size: 9pt;
+padding: 0;
+margin: 0;
+max-width: 100%;
+line-height: 1.4;
+}
+h1, h2, h3, h4, h5, h6 { color: #111111; }
+h1 { font-size: 18pt; border-bottom-color: #cccccc; }
+h2 { font-size: 12pt; border-bottom-color: #cccccc; margin-top: 1.5em; }
+h3 { font-size: 11pt; color: #111111; margin-top: 1.5em; }
+h3 .company { color: #000000; }
+strong { color: #111111; }
+a { color: #333333; text-decoration: none; }
+em { color: #444444; }
+li { color: #222222; margin-bottom: 0.3em; }
+p { margin: 0.5em 0; color: #222222; }
+table { font-size: 8pt; table-layout: fixed; width: 100%; word-wrap: break-word; }
+th { background-color: #f0f0f0; color: #111111; border-color: #cccccc; padding: 4px 6px; }
+td { color: #222222; border-color: #dddddd; padding: 4px 6px; }
+pre, code { font-size: 8pt; white-space: pre-wrap; }
+hr { border-top-color: #cccccc; }
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+ul { margin-top: 0.4em; }
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #6688bb;
+}
+a:visited {
+color: #6688bb;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h3 {
+margin-top: 2.5em;
+}
+h3 .company { color: #ffffff; }
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #333333;
+color: #888888;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+border: none;
+border-top: 1px solid #282828;
+height: 1px;
+margin: 2em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: table;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #2a2a2a;
+border-bottom: 1px solid #2a2a2a;
+}
+th {
+background-color: #1a1a1a;
+color: #e0e0e0;
+border-top: 1px solid #2a2a2a;
+padding: 10px 14px;
+}
+td {
+padding: 10px 14px;
+border: 1px solid #222222;
+color: #b0b0b0;
+}
+header {
+margin-bottom: 0;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+</head>
+<body>
+<h1 id="chase-demaster">Chase DeMaster</h1>
+<p><strong>Senior Full Stack Engineer</strong></p>
+<p>Houston, TX 77345 | 713.614.6248 | ChaseDeMaster.tech@gmail.com <a href="https://buildmacro.tech/">Portfolio</a> | <a href="https://www.linkedin.com/in/chase-demaster/">LinkedIn</a> | <a href="https://github.com/chaselikethebank">GitHub</a></p>
+<h2 id="professional-summary">Professional Summary</h2>
+<pre><code>Builder, educator, founder, and full stack engineer. I founded a music rights company, grew it to 160+ releases distribution through Orchard/Sony, secured an investor, and bought it all back. I completed 4 IRONMAN triathlons. I read 100+ books in a single year. I went from last place to 2nd place at the same triathlon in 4 years. I taught 60+ students to become professional developers while live streaming 6 hours a day. I am an ACHIEVER (Enneagram 3) and an INFJ.
+
+Now I build enterprise software. I design mobile APIs at Insperity, build service integration pipelines, author developer documentation systems, and speak at conferences about creating leverage. I walk into unfamiliar domains, put my head down and close. From the music industry to opensource tech to enterprise HR platforms. I often find success by outworking those who might be a little smarter than me and being a little smarter than those who try to outwork me. </code></pre>
+<h2 id="mental-models-frameworks">Mental Models &amp; Frameworks</h2>
+<ul>
+<li><strong>Invert, invert, always invert.</strong> Reverse engineer
+from the working solution and only make right turns. - Munger</li>
+<li><strong>One thing at a time</strong> Nothing is particularly hard if
+you divide it into small piences. -Ford</li>
+<li><strong>The map is not the territory.</strong> Abstraction is real.
+Use it accordingly but don’t confuse it for the real thing. - Michael
+Scott</li>
+<li><strong>See something, say something.</strong> Vocalize the value I
+see in other’s work per my personal dicsernment and I will be surrounded
+by people I genuinely appreciate.</li>
+<li><strong>More will than skill.</strong> Winning has a lot more to do
+with not giving up than it does the initial resources at the
+beginning.</li>
+<li><strong>Eat well.</strong> The easiest way to raise your standard of
+living is to care about the things you cook; Try hard in everything and
+life will be rich.</li>
+<li><strong>Don’t Negate the Frame</strong> The mind works in
+affirmations (not negations) so think, write, and speak to the
+affirmative (don’t negate the frame, pun)</li>
+<li><strong>Law of the Instrument</strong> When you are a hammer,
+everything is a nail. - Maslow</li>
+</ul>
+<h2 id="technical-skills">Technical Skills</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Category</th>
+<th>Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Backend</strong></td>
+<td>C#/.NET (4.7, .NET 8), Node/Express, Python, SQL, PHP, Ruby</td>
+</tr>
+<tr>
+<td><strong>Frontend</strong></td>
+<td>React, Vue, Blazor, Angular, Lava/Liquid</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>MongoDB, PostgreSQL, MySQL, SQL Server, SQLite, MariaDB</td>
+</tr>
+<tr>
+<td><strong>Cloud &amp; Infrastructure</strong></td>
+<td>GCP, AWS, Azure DevOps, Digital Ocean, Docker, Vercel</td>
+</tr>
+<tr>
+<td><strong>Observability &amp; Analytics</strong></td>
+<td>Pendo, Firebase Analytics</td>
+</tr>
+<tr>
+<td><strong>CI/CD &amp; Deployment</strong></td>
+<td>GitHub, Azure DevOps, Vercel, Digital Ocean</td>
+</tr>
+</tbody>
+</table>
+<h2 id="professional-experience">Professional Experience</h2>
+<h3 id="insperity-software-application-engineer-mobile-team"><span class="company">Insperity</span> |
+Software Application Engineer, Mobile Team</h3>
+<p><strong>Oct 2025 – Present</strong> | Fully Remote</p>
+<p>Design, build, and manage the APIs that imports and normalizes data
+from multiple internal service teams into unified, mobile-optimized
+contracts serving Insperity’s enterprise HR platform at scale.</p>
+<ul>
+<li><strong>Designed the mobile API hub</strong> that imports and
+normalizes data from internal service teams (payroll, 401k, HR, time
+tracking, benefits, performance management) into unified mobile
+contracts</li>
+<li><strong>Implemented multi-tenant authorization</strong> coordinating
+multiple authentication token sources with client-specific issuance
+rules and dozens of client and user role configurations</li>
+<li><strong>Built per-version feature delivery</strong> ensuring the
+backend serves all client versions simultaneously; new service code and
+app features are delivered conditionally per version so users on older
+releases continue to work while new features roll out to updated
+clients</li>
+<li><strong>Designed missing punch reconciliation APIs</strong> covering
+submission, withdrawal, index of all requests sent by and to managers,
+and cancellation workflows</li>
+<li><strong>Author Documentation</strong> For each user story and API
+integration, I author documentation to create leverage (my speaking
+topic at the <a href="https://rx.rockrms.com/">2025 Rock RX
+Conference</a>)</li>
+<li><strong>Led cross-team implementation workshop</strong> teaching
+missing punch API specification and integration patterns to mobile team
+engineers</li>
+<li><strong>Implemented Pendo SDK integration</strong> via .NET
+pipelines and services to track user activity and deliver actionable
+behavior analytics</li>
+<li><strong>Build and Maintane Postman environments</strong> as the code
+base grows and is refactored by using pre/post js automations for saving
+env variables accross multip dev =&gt; production environments.</li>
+<li><strong>Discovery and Research</strong> new implimentations and
+solutions through researching other team’s (37 dev teams total at
+Insperity) codebase via AZD, organizing async and sync comms to discuss
+API consumption registration, contracts, requirements and gotchas
+etc</li>
+</ul>
+<p><strong>Stack:</strong> C# (.NET 4.7, .NET 8), RestSharp, ASP.NET,
+Visual Studio, Azure DevOps (stories, repos, pipelines, builds), Octopus
+Deploy, MISRC architecture</p>
+<h3 id="the-woodlands-methodist-church-full-stack-developer"><span class="company">The
+Woodlands Methodist Church</span> | Full Stack Developer</h3>
+<p><strong>2023 – 2025</strong> | Hybrid | <a href="http://www.thewoodlandsmethodist.org">thewoodlandsmethodist.org</a></p>
+<p>Built internal platform infrastructure and service integrations for a
+multi-campus organization on the Rock RMS / C# ASP.NET stack.</p>
+<ul>
+<li><strong>Built service integration pipeline</strong> solving the
+multi-campus video content problem - hosting on YouTube, Vimeo, and the
+website was dividing views and killing viral potential. Solution: a
+Node/Express scheduled cache that hits the YouTube API for an array of
+playlist IDs, deduplicates across playlists, stores in MongoDB, and
+serves via REST endpoints on a DigitalOcean droplet to Rock RMS webhooks
+- consolidating all views on YouTube and staying well under Google API
+rate limits</li>
+<li><strong>Implemented Google Analytics</strong> across the platform
+for traffic and engagement tracking</li>
+<li><strong>Created the organization’s first developer documentation
+system</strong> using VitePress/Vue with CI/CD via Vercel - covering
+style guides, design patterns (responsive grids, elevation, friction,
+border-radius), marketing frameworks (momentMomentum, StoryBrand,
+Content Pyramid, PAS, Growth Hacking), component library, and
+architecture decisions (<a href="https://sm-guide-7w6jp953x-chaselikethebanks-projects.vercel.app/">docs</a>)</li>
+<li><strong>Led multi-month platform builds</strong> for <a href="http://twmschool.org">TWMSchool.org</a> and <a href="http://childrenofthewoodlands.org">ChildrenOfTheWoodlands.org</a>,
+designing Rock RMS themes, implementing content channels and group
+types, and integrating Google Calendar API</li>
+<li><strong>Speaker at the <a href="https://rx.rockrms.com/">2025 Rock
+RX Conference</a></strong> Pheonix, AZ | Topic: <em>“Write
+Documentation; Create Leverage”</em></li>
+<li>Collaborated across a cross-functional team of 15+ (frontend,
+backend, design, video, copy, stakeholders) in an agile workflow</li>
+</ul>
+<p><strong>Stack:</strong> C#/.NET, ASP.NET, Lava/Liquid, Vue,
+JavaScript, Bootstrap 5, Node/Express, MongoDB, Azure, AWS, GCP</p>
+<h3 id="edx-university-of-texas-sa-university-of-wisconsin-lead-instructor-full-stack-development"><span class="company">edX
+(University of Texas SA &amp; University of Wisconsin)</span> | Lead
+Instructor, Full Stack Development</h3>
+<p><strong>2023 – 2024</strong> | Remote</p>
+<p>Tasked with bringing inspired individuals with little to no coding
+experience to proficient full stack developers in the MERN stack capable
+of adding immediate value in the market within a 6-month term. With each
+student paying $15K and 20+ seats in a cohort, directly responsible for
+delivering on +/-$450K worth of capital per cohort. Completed two rounds
+of cohorts.</p>
+<ul>
+<li><strong>Led two cohorts of 30+ students</strong> through the full
+MERN stack curriculum, from MySQL and Sequelize through Handlebars
+templating to React and GraphQL</li>
+<li><strong>Served as scrum master</strong> for 5+ project teams of 3–5
+developers each, managing sprints, coordinating deliverables, and
+serving as the last-mile problem solver across all three major
+projects</li>
+<li><strong>Tech lead for 10 live coding sessions per day</strong>
+consisting of 5 demonstrations and 5 timed student problems solved in
+real time for 30+ students, streaming 6 hours of live instruction per
+session</li>
+<li><strong>Debugged student code</strong> for an hour before and after
+each class, covering an exhaustive range of libraries and frameworks
+across the full stack</li>
+<li><strong>Conducted daily standups</strong> as scrum master,
+forecasting goals and objectives and managing teaching assistant(s)</li>
+<li><strong>Managed the emotional weight</strong> of students hoping to
+change the course of their lives - listening, communicating, and
+supporting them through inevitable trials both technically and
+personally</li>
+</ul>
+<p><strong>Stack:</strong> Node/Express, React, MongoDB, MySQL,
+Sequelize, GraphQL, Handlebars, Vite, Bcrypt, Bootstrap, Git/GitHub</p>
+<h3 id="pro-sprinkler-associate-web-developer-licensed-irrigator"><span class="company">Pro-Sprinkler</span>
+| Associate, Web Developer &amp; Licensed Irrigator</h3>
+<p><strong>2018 – 2023</strong> | Houston | <a href="https://prosprinkler.net">ProSprinkler.net</a></p>
+<ul>
+<li><strong>Licensed Landscape Design Irrigator</strong> (LI# 26954) -
+fluid dynamics, backflow prevention, system design, and installation of
+wifi controllers</li>
+<li><strong>Built an evapotranspiration-based irrigation
+algorithm</strong> that solves the overwatering-in-winter /
+underwatering-in-summer problem. Compiled monthly ET data for 13 Texas
+regions into a PostgreSQL database, applied a 0.65 crop coefficient for
+turf, and calculated per-zone run times differentiating between rotor
+heads (0.625 in/hr infiltration) and spray heads (1.5 in/hr
+infiltration) adjusted by season and watering frequency</li>
+<li><strong>Built custom web app</strong> (React/Ruby on Rails, rebuilt
+in MERN) for clients to manage sprinkler system run times per zone, with
+regional ET-adjusted scheduling, irrigation cost forecasting relative to
+MUD district (Houston), photos, and monthly updates</li>
+<li><strong>Built and deployed a Water Conservation Tool</strong>
+(“Water Bill Calculator”) to help clients forecast water bills relative
+to their irrigation schedule using Vite/React on Hostinger</li>
+<li><strong>Designed and built ProSprinkler.net</strong> using
+WordPress, PHP, JavaScript, custom CSS, and Hostinger</li>
+</ul>
+<h3 id="very-jazzed-llc-founder-operator---music-rights-marketing-agency-and-event-booking"><span class="company">Very
+Jazzed LLC</span> | Founder &amp; Operator - Music Rights, Marketing Agency,
+and Event Booking</h3>
+<p><strong>2013 – 2023</strong> | Online | <a href="https://veryjazzed.com/">veryjazzed.com</a></p>
+<p>Founded and operated a music rights acquisition and management,
+marketing agency, and event booking company. This was my local maximum.
+Similar to a private equity play - find music rights not performing at
+market value, acquire the rights, raise the value of the product, and
+sell at a higher price back to the market. Sometimes that looked like
+paying for a record outright, running a national marketing campaign and
+tour, and cashing in on streams through the term of the contract. Other
+times it meant finding a record with potential for film/series placement
+and working to secure sync deals. The hard and soft skills acquired
+during this season - stakeholder communication, expectation management,
+resource allocation, championing others’ ideas - have been enormously
+valuable as a developer.</p>
+<ul>
+<li><strong>Solely responsible for managing burn against working
+capital</strong>, pipelining new projects, defining scope, managing tax
+burdens/benefits, and paying contracts, employees, manufacturers, and
+artists</li>
+<li><strong>Project managed national media campaigns</strong> consisting
+of 7,500+ emails per campaign across 3–6 month terms</li>
+<li><strong>Project managed physical products</strong> (vinyl records,
+shirts, tapes) from manufacturing through fulfillment at the scale of
+thousands of shipments</li>
+<li><strong>Managed digital asset distribution</strong> of contracts,
+MP3s, WAVs, album art, singles art, and music videos to sync houses,
+earned media resources, and The Orchard/Sony at the scale of 162+
+releases</li>
+<li><strong>Found, pitched, and closed 60+ artists and acts</strong>,
+then maintained relationships to the degree that 99% worked with me in
+perpetuity of their careers</li>
+<li><strong>Partnered with The Orchard Distribution (Sony
+Music)</strong>, Infinite Catalog (Secretly), Selected Works, BMI, and
+Dirty Laundry Music - fostered successful relationships long after
+closing initial deals</li>
+<li><strong>Booked 20+ national/regional tours and festivals</strong>,
+managing a team of 3 other bookers</li>
+<li><strong>Accrued ~10 million streams</strong>, managed 160+ releases,
+and sync’d 6 national series (Netflix, Showtime, CW level)</li>
+<li><strong>Secured investor equity, scaled operations, and executed a
+full buyback</strong> (2016–2020)</li>
+</ul>
+<h3 id="themarket-fit-founder-operator"><span class="company">TheMarket.Fit</span> | Founder &amp; Operator - Developer, Designer, and Business Strategy</h3>
+<p><strong>2023 – Present</strong> | Online | <a href="https://themarket.fit/">themarket.fit</a></p>
+<p>I help small businesses move from brute force to leveraged agency -
+from 1:1 to 1:10. Design the system once, print to production
+repeatedly, monitor results, and iterate early and often.</p>
+<ul>
+<li><strong>StoryBrand</strong> — Make the customer the hero, position the product as the guide through their journey - clarity in messaging drives conversion</li>
+<li><strong>momentMomentum</strong> — Phase campaigns through Pre/Prime/Live/ICYMI to keep content freshly framed through time instead of "posting about it" once</li>
+<li><strong>Content Pyramid</strong> — Pillar long-form content repurposed into micro-content and social snippets - ties planning and distribution together</li>
+<li><strong>PAS (Problem-Agitation-Solution)</strong> — Address customer pain points, intensify agitation, present clear solution - effective for sales pages, landing pages, and ad copy</li>
+<li><strong>Growth Hacking</strong> — Data-driven experimentation loops: tweet daily, blog weekly on top-performing tweet, editorial monthly on top blog, book yearly on top editorial</li>
+<li><strong>Brand Codification</strong> — Systematize typography, color, spacing, and responsiveness so identity is codified, not ad-hoc - every design choice carries associative baggage; clarity is king</li>
+<li><strong>Niche of One</strong> — Tim Ferriss' "category of one" - niche down repeatedly until you become the only, then win by default</li>
+<li><strong>Friction &amp; Elevation</strong> — Map where friction exists in the user journey and design systems to reduce it; elevate the elements that drive conversion</li>
+<li><strong>System vs. Craft</strong> — Separate system-building from craft work - "you cannot build an airplane mid-flight." Build the reusable grid system, not the one-off landing page</li>
+</ul>
+<h2 id="education-certifications">Education &amp; Certifications</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Credential</th>
+<th>Institution</th>
+<th>Year</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full Stack Web Developer Certification</td>
+<td>Flatiron School</td>
+<td>2020</td>
+<td>HTML, CSS, JavaScript, React, Rails, Agile Project Management</td>
+</tr>
+<tr>
+<td>M.Ed. in Education &amp; Worship</td>
+<td>Liberty University</td>
+<td>2020</td>
+<td>Omega Nu Lambda Member</td>
+</tr>
+<tr>
+<td>B.M. in Music (Honors in Music Theory)</td>
+<td>University of Houston</td>
+<td>2010</td>
+<td>Hogwarts but for musicians</td>
+</tr>
+<tr>
+<td>Licensed Irrigator (LI#: 26954)</td>
+<td>State of Texas</td>
+<td>2021</td>
+<td>Fluid dynamics, Backflow prevention, Installation, Design</td>
+</tr>
+<tr>
+<td>Adobe Premiere Pro CC Certification</td>
+<td>BYOL</td>
+<td>2021</td>
+<td>FPS, Effects, Transitions, Animation Keyframes, Lumetri Color,
+Export</td>
+</tr>
+</tbody>
+</table>
+<h2 id="notable-achievements">Notable Achievements</h2>
+<p><strong>Endurance</strong></p>
+<ul>
+<li>IRONMAN 140.6 Miles, Waco, TX (October 2021)</li>
+<li>IRONMAN 70.3 Miles - Galveston (April 2021, April 2023), Lubbock (June 2021)</li>
+<li>Xterra Triathlons - Pace Bend (2022 Last Place, April 2023, April 2024, April 2025, 2026 2nd Place age group), Magnolia Hill June 2024 (2nd Place, age group)</li>
+<li>TEXAS Marathon 26.2 Miles (January 2022), TEXAS Half Marathon 13.1 Miles (January 2020, January 2023)</li>
+</ul>
+<p><strong>Creative</strong></p>
+<ul>
+<li>Performed at Carnegie Hall, New York City (2006)</li>
+<li>Supported Gold-Selling Record Artist in Europe on Guitar (Summer 2019)</li>
+<li>Toured US with various projects and roles (2013–2019)</li>
+<li>10,000+ hours in DAWs Logic Pro/Ableton (2010)</li>
+<li>Accrued ~10 million streams across managed music catalog</li>
+</ul>
+<p><strong>Learning</strong></p>
+<ul>
+<li>Read 100+ books in a single year (2021); Read 23 books (2022)</li>
+<li>Certified: Adobe Premiere Pro CC Essentials Training Course (January 2021)</li>
+<li>Member of HGCIA (2021)</li>
+</ul>
+</body>
+</html>
