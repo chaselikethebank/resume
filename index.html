@@ -31,8 +31,8 @@ a:hover { color: #88aadd; }
 hr { border: none; border-top: 1px solid #282828; margin: 2em 0; }
 strong { color: #e0e0e0; }
 table { border-collapse: collapse; width: 100%; margin: 1em 0; }
-th { background-color: #1a1a1a; color: #e0e0e0; text-align: left; padding: 10px 14px; border: 1px solid #2a2a2a; }
-td { padding: 10px 14px; border: 1px solid #222222; color: #b0b0b0; }
+th { background-color: #1a1a1a; color: #e0e0e0; text-align: left; padding: 6px 10px; border: 1px solid #2a2a2a; }
+td { padding: 6px 10px; border: 1px solid #222222; color: #b0b0b0; }
 tr:nth-child(even) { background-color: #161616; }
 ul { padding-left: 1.5em; }
 li { margin-bottom: 0.6em; color: #b0b0b0; }
@@ -46,35 +46,45 @@ h1 {
 font-size: 1.8em;
 }
 }
+@page {
+margin: 0;
+size: letter;
+}
 @media print {
+* {
+-webkit-print-color-adjust: exact !important;
+print-color-adjust: exact !important;
+}
 html {
-background-color: white;
-color: #111111;
+background: #111111 !important;
+color: #cccccc;
 }
 body {
-background-color: transparent;
-color: #111111;
+background: #111111 !important;
+color: #cccccc;
 font-size: 9pt;
-padding: 0;
+padding: 0.5in 0.6in;
 margin: 0;
 max-width: 100%;
 line-height: 1.4;
+min-height: 100vh;
 }
-h1, h2, h3, h4, h5, h6 { color: #111111; }
-h1 { font-size: 18pt; border-bottom-color: #cccccc; }
-h2 { font-size: 12pt; border-bottom-color: #cccccc; margin-top: 1.5em; }
-h3 { font-size: 11pt; color: #111111; margin-top: 1.5em; }
-h3 .company { color: #000000; }
-strong { color: #111111; }
-a { color: #333333; text-decoration: none; }
-em { color: #444444; }
-li { color: #222222; margin-bottom: 0.3em; }
-p { margin: 0.5em 0; color: #222222; }
+h1, h2, h3, h4, h5, h6 { color: #e8e8e8; }
+h1 { font-size: 18pt; border-bottom-color: #333333; }
+h2 { font-size: 12pt; border-bottom-color: #282828; margin-top: 0.8em; }
+h3 { font-size: 11pt; color: #bbbbbb; margin-top: 1em; }
+h3 .company { color: #ffffff; }
+strong { color: #e0e0e0; }
+a { color: #6688bb; text-decoration: underline; }
+em { color: #999999; }
+li { color: #b0b0b0; margin-bottom: 0.3em; }
+p { margin: 0.5em 0; color: #cccccc; }
 table { font-size: 8pt; table-layout: fixed; width: 100%; word-wrap: break-word; }
-th { background-color: #f0f0f0; color: #111111; border-color: #cccccc; padding: 4px 6px; }
-td { color: #222222; border-color: #dddddd; padding: 4px 6px; }
+th { background-color: #1a1a1a; color: #e0e0e0; border-color: #2a2a2a; padding: 4px 6px; }
+td { color: #b0b0b0; border-color: #222222; padding: 4px 6px; }
+tr:nth-child(even) { background-color: #161616; }
 pre, code { font-size: 8pt; white-space: pre-wrap; }
-hr { border-top-color: #cccccc; }
+hr { border-top-color: #282828; }
 p, h2, h3 {
 orphans: 3;
 widows: 3;
@@ -216,9 +226,9 @@ vertical-align: middle;
 <p><strong>Senior Full Stack Engineer</strong></p>
 <p>Houston, TX 77345 | 713.614.6248 | ChaseDeMaster.tech@gmail.com <a href="https://buildmacro.tech/">Portfolio</a> | <a href="https://www.linkedin.com/in/chase-demaster/">LinkedIn</a> | <a href="https://github.com/chaselikethebank">GitHub</a></p>
 <h2 id="professional-summary">Professional Summary</h2>
-<pre><code>Builder, educator, founder, and full stack engineer. I founded a music rights company, grew it to 160+ releases distribution through Orchard/Sony, secured an investor, and bought it all back. I completed 4 IRONMAN triathlons. I read 100+ books in a single year. I went from last place to 2nd place at the same triathlon in 4 years. I taught 60+ students to become professional developers while live streaming 6 hours a day. I am an ACHIEVER (Enneagram 3) and an INFJ.
+<pre><code>Builder, educator, founder, and full stack engineer. I founded a music rights company, grew it to 160+ releases distribution through Orchard/Sony, secured an investor, and bought it all back. I completed 4 IRONMAN triathlons. I read 100+ books in a single year. I went from last place to 3rd place at the Xterra/USA Triathlon Cross Nationals Pace Bend (Austin) in 4 years. I taught 60+ students to become professional developers while live streaming 6 hours a day against ~$900K in student capital. I am an ACHIEVER (Enneagram 3) and an INFJ.
 
-Now I build enterprise software. I design mobile APIs at Insperity, build service integration pipelines, author developer documentation systems, and speak at conferences about creating leverage. I walk into unfamiliar domains, put my head down and close. From the music industry to opensource tech to enterprise HR platforms. I often find success by outworking those who might be a little smarter than me and being a little smarter than those who try to outwork me. </code></pre>
+Now I build enterprise software. I design mobile APIs at Insperity, build service integration pipelines, author developer documentation systems, and speak at conferences about creating leverage. I walk into unfamiliar domains, put my head down and close. From the music industry to opensource tech to enterprise HR platforms. I often find success by outworking those who might be a little smarter than me and being a little smarter than those who try to outwork me. I am great at knowing the difference. </code></pre>
 <h2 id="mental-models-frameworks">Mental Models &amp; Frameworks</h2>
 <ul>
 <li><strong>Invert, invert, always invert.</strong> Reverse engineer
@@ -286,43 +296,17 @@ everything is a nail. - Maslow</li>
 <h3 id="insperity-software-application-engineer-mobile-team"><span class="company">Insperity</span> |
 Software Application Engineer, Mobile Team</h3>
 <p><strong>Oct 2025 – Present</strong> | Fully Remote</p>
-<p>Design, build, and manage the APIs that imports and normalizes data
-from multiple internal service teams into unified, mobile-optimized
-contracts serving Insperity’s enterprise HR platform at scale.</p>
+<p>Build and ship features across the mobile API service layer — a platform that imports and normalizes data from multiple internal service teams into unified, mobile-optimized contracts serving Insperity's enterprise HR platform at scale.</p>
 <ul>
-<li><strong>Designed the mobile API hub</strong> that imports and
-normalizes data from internal service teams (payroll, 401k, HR, time
-tracking, benefits, performance management) into unified mobile
-contracts</li>
-<li><strong>Implemented multi-tenant authorization</strong> coordinating
-multiple authentication token sources with client-specific issuance
-rules and dozens of client and user role configurations</li>
-<li><strong>Built per-version feature delivery</strong> ensuring the
-backend serves all client versions simultaneously; new service code and
-app features are delivered conditionally per version so users on older
-releases continue to work while new features roll out to updated
-clients</li>
-<li><strong>Designed missing punch reconciliation APIs</strong> covering
-submission, withdrawal, index of all requests sent by and to managers,
-and cancellation workflows</li>
-<li><strong>Author Documentation</strong> For each user story and API
-integration, I author documentation to create leverage (my speaking
-topic at the <a href="https://rx.rockrms.com/">2025 Rock RX
-Conference</a>)</li>
-<li><strong>Led cross-team implementation workshop</strong> teaching
-missing punch API specification and integration patterns to mobile team
-engineers</li>
-<li><strong>Implemented Pendo SDK integration</strong> via .NET
-pipelines and services to track user activity and deliver actionable
-behavior analytics</li>
-<li><strong>Build and Maintane Postman environments</strong> as the code
-base grows and is refactored by using pre/post js automations for saving
-env variables accross multip dev =&gt; production environments.</li>
-<li><strong>Discovery and Research</strong> new implimentations and
-solutions through researching other team’s (37 dev teams total at
-Insperity) codebase via AZD, organizing async and sync comms to discuss
-API consumption registration, contracts, requirements and gotchas
-etc</li>
+<li><strong>Build and extend the mobile API hub</strong> across internal service teams (payroll, 401k, HR, time tracking, benefits, performance management), implementing new endpoints and feature contracts against an established architecture</li>
+<li><strong>Shipped the full Missing Punch feature end-to-end</strong> — took ownership from discovery through implementation, delivering Request, Withdraw/Cancel, Sent to Me/Sent by Me, Punch Meta, and Submit workflows. Identified an upstream data contract issue (string vs. List mismatch from the Hermes team), drove consensus on the fix, and got it into their pipeline for remediation</li>
+<li><strong>Delivered a year's worth of Pendo integration in ~6 weeks</strong> — researched the SDK with no existing NMS playbook, drove the full implementation across .NET pipelines and services, and shipped behavioral analytics tracking to near-complete coverage</li>
+<li><strong>Implemented multi-tenant authorization</strong> coordinating multiple authentication token sources with client-specific issuance rules and dozens of client and user role configurations</li>
+<li><strong>Built per-version feature delivery</strong> ensuring the backend serves all client versions simultaneously; new service code and app features are delivered conditionally per version so users on older releases continue to work while new features roll out to updated clients</li>
+<li><strong>Authored 11+ wiki articles from zero documentation</strong> — built the NMS org wiki from nothing, establishing a repeatable template covering required inputs, deterministic outputs, live Postman flows with copyable payloads, and explicit gotcha callouts. Every feature in my ownership area now has async-ready documentation that eliminates repeat questions and reduces synchronous knowledge transfer</li>
+<li><strong>Led cross-team implementation workshop</strong> teaching missing punch API specification and integration patterns to mobile team engineers</li>
+<li><strong>Built and maintained Postman environments</strong> with pre/post JS automations for persisting environment variables across dev through production environments as the codebase scales</li>
+<li><strong>Cross-team discovery and research</strong> across Insperity's 37 dev teams via Azure DevOps, coordinating async and sync communications to negotiate API consumption registration, contracts, requirements, and integration gotchas</li>
 </ul>
 <p><strong>Stack:</strong> C# (.NET 4.7, .NET 8), RestSharp, ASP.NET,
 Visual Studio, Azure DevOps (stories, repos, pipelines, builds), Octopus
@@ -424,7 +408,7 @@ and Event Booking</h3>
 <p><strong>2013 – 2023</strong> | Online | <a href="https://veryjazzed.com/">veryjazzed.com</a></p>
 <p>Founded and operated a music rights acquisition and management,
 marketing agency, and event booking company. This was my local maximum.
-Similar to a private equity play - find music rights not performing at
+Similar to a private equity business - find music rights not performing at
 market value, acquire the rights, raise the value of the product, and
 sell at a higher price back to the market. Sometimes that looked like
 paying for a record outright, running a national marketing campaign and
@@ -481,10 +465,10 @@ repeatedly, monitor results, and iterate early and often.</p>
 <h2 id="education-certifications">Education &amp; Certifications</h2>
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col style="width: 30%" />
+<col style="width: 22%" />
+<col style="width: 8%" />
+<col style="width: 40%" />
 </colgroup>
 <thead>
 <tr>
@@ -523,8 +507,7 @@ repeatedly, monitor results, and iterate early and often.</p>
 <td>Adobe Premiere Pro CC Certification</td>
 <td>BYOL</td>
 <td>2021</td>
-<td>FPS, Effects, Transitions, Animation Keyframes, Lumetri Color,
-Export</td>
+<td>FPS, Effects, Transitions, Animation Keyframes, Lumetri Color, Export</td>
 </tr>
 </tbody>
 </table>
@@ -533,7 +516,7 @@ Export</td>
 <ul>
 <li>IRONMAN 140.6 Miles, Waco, TX (October 2021)</li>
 <li>IRONMAN 70.3 Miles - Galveston (April 2021, April 2023), Lubbock (June 2021)</li>
-<li>Xterra Triathlons - Pace Bend (2022 Last Place, April 2023, April 2024, April 2025, 2026 2nd Place age group), Magnolia Hill June 2024 (2nd Place, age group)</li>
+<li>Xterra Triathlons - Xterra/USA Triathlon Cross Nationals Pace Bend (Austin), Austin (2022 Last Place to 2026 3rd Place, age group), Magnolia Hill June 2024 (2nd Place, age group), Magnolia Hill June 2026 (3rd Place, age group)</li>
 <li>TEXAS Marathon 26.2 Miles (January 2022), TEXAS Half Marathon 13.1 Miles (January 2020, January 2023)</li>
 </ul>
 <p><strong>Creative</strong></p>
